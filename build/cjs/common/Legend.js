@@ -44,7 +44,8 @@ module.exports = React.createClass({
       var itemStyle = {
         color: props.colors(props.colorAccessor(series, idx)),
         lineHeight: '60%',
-        fontSize: '200%'
+        fontSize: '200%',
+        marginLeft: '20px'
       };
 
       legendItems.push(React.createElement(
@@ -64,7 +65,7 @@ module.exports = React.createClass({
       ));
     });
 
-    var topMargin = props.margins.top;
+    var topMargin = '40px';
 
     var legendBlockStyle = {
       wordWrap: 'break-word',

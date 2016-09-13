@@ -106,7 +106,7 @@ module.exports = React.createClass({
         ),
         React.createElement(
           'div',
-            { style: { display: 'table-cell', width: props.sideOffset, verticalAlign: 'top',width:'100px' } },
+            { style: { display: 'table-cell', width: props.sideOffset, verticalAlign: 'top',width:'120px' } },
           this._renderLegend()
         )
       )

@@ -38,7 +38,9 @@ module.exports = React.createClass({
     yAxisClassName: React.PropTypes.string,
     yAxisTickCount: React.PropTypes.number,
     xAccessor: React.PropTypes.any, // TODO: prop types?
-    yAccessor: React.PropTypes.any
+    yAccessor: React.PropTypes.any,
+    handleHighLight: React.PropTypes.func,
+    yDomain: React.PropTypes.array
   },
 
   mixins: [CartesianChartPropsMixin, DefaultAccessorsMixin, ViewBoxMixin, TooltipMixin],
@@ -126,8 +128,8 @@ module.exports = React.createClass({
     var xDomain = domain.x || this._getLabels(_data[0]);
     var xScale = d3.scale.ordinal().domain(xDomain).rangeRoundBands([0, innerWidth], props.rangeRoundBandsPadding);
 
-    var minYDomain = Math.min(0, this._getStackedValuesMinY(_data));
-    var maxYDomain = this._getStackedValuesMaxY(_data);
+    var minYDomain = props.yDomain[0] || Math.min(0, this._getStackedValuesMinY(_data));
+    var maxYDomain = props.yDomain[1] || this._getStackedValuesMaxY(_data);
     var yDomain = domain.y || [minYDomain, maxYDomain];
     var yScale = d3.scale.linear().range([innerHeight, 0]).domain(yDomain);
 
@@ -210,7 +212,8 @@ module.exports = React.createClass({
             hoverAnimation: props.hoverAnimation,
             valuesAccessor: props.valuesAccessor,
             onMouseOver: this.onMouseOver,
-            onMouseLeave: this.onMouseLeave
+            onMouseLeave: this.onMouseLeave,
+            handleHighLight:props.handleHighLight
           })
         )
       ),

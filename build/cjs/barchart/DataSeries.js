@@ -20,12 +20,12 @@ module.exports = React.createClass({
     onMouseLeave: React.PropTypes.func,
     hoverAnimation: React.PropTypes.any, // TODO: prop types?
     xScale: React.PropTypes.any,
-    yScale: React.PropTypes.any
+    yScale: React.PropTypes.any,
+    handleHighLight: React.PropTypes.func
   },
 
   _renderBarSeries: function _renderBarSeries() {
     var _this = this;
-
     var _props = this.props;
     var _data = _props._data;
     var valuesAccessor = _props.valuesAccessor;
@@ -61,7 +61,8 @@ module.exports = React.createClass({
         xValue: segment.x,
         yValue: segment.y,
         seriesName: this.props.series[seriesIdx]
-      }
+      },
+      handleHighLight:this.props.handleHighLight
     });
   },
   render: function render() {

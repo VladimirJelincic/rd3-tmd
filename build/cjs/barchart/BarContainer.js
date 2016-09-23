@@ -40,7 +40,11 @@ module.exports = React.createClass({
     this.setState({
       fill: shade(this.props.fill, 0.2)
     });
-  },
+    if(this.props.handleHighLight){
+      this.props.handleHighLight(this.props.dataPoint);
+    }
+
+},
   _restoreBar: function _restoreBar() {
     this.props.onMouseLeave.call(this);
     this.setState({

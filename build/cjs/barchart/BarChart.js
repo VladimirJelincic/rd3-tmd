@@ -40,7 +40,8 @@ module.exports = React.createClass({
     xAccessor: React.PropTypes.any, // TODO: prop types?
     yAccessor: React.PropTypes.any,
     handleHighLight: React.PropTypes.func,
-    yDomain: React.PropTypes.array
+    yDomain: React.PropTypes.array,
+    yAxisBorder: React.PropTypes.number
   },
 
   mixins: [CartesianChartPropsMixin, DefaultAccessorsMixin, ViewBoxMixin, TooltipMixin],
@@ -124,7 +125,6 @@ module.exports = React.createClass({
     var trans = _getDimensions.trans;
     var svgMargins = _getDimensions.svgMargins;
 
-
     var xDomain = domain.x || this._getLabels(_data[0]);
     var xScale = d3.scale.ordinal().domain(xDomain).rangeRoundBands([0, innerWidth], props.rangeRoundBandsPadding);
 
@@ -176,7 +176,8 @@ module.exports = React.createClass({
             gridHorizontal: props.gridHorizontal,
             gridHorizontalStroke: props.gridHorizontalStroke,
             gridHorizontalStrokeWidth: props.gridHorizontalStrokeWidth,
-            gridHorizontalStrokeDash: props.gridHorizontalStrokeDash
+            gridHorizontalStrokeDash: props.gridHorizontalStrokeDash,
+            yAxisBorder: props.yAxisBorder
           }),
           React.createElement(XAxis, {
             xAxisClassName: props.xAxisClassName,

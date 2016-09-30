@@ -30,7 +30,8 @@ module.exports = React.createClass({
     gridHorizontalStrokeWidth: React.PropTypes.number,
     gridVerticalStrokeWidth: React.PropTypes.number,
     gridHorizontalStrokeDash: React.PropTypes.string,
-    gridVerticalStrokeDash: React.PropTypes.string
+    gridVerticalStrokeDash: React.PropTypes.string,
+    yAxisBorder: React.PropTypes.number
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -83,7 +84,9 @@ module.exports = React.createClass({
     } else {
       ticks = scale.domain();
     }
-
+    if(props.yAxisBorder){
+      ticks.push(props.yAxisBorder);
+    }
     if (props.tickFormatting) {
       tickFormat = props.tickFormatting;
     } else if (scale.tickFormat) {

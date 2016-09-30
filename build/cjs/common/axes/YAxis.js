@@ -31,7 +31,8 @@ module.exports = React.createClass({
     gridVertical: React.PropTypes.bool,
     gridVerticalStroke: React.PropTypes.string,
     gridVerticalStrokeWidth: React.PropTypes.number,
-    gridVerticalStrokeDash: React.PropTypes.string
+    gridVerticalStrokeDash: React.PropTypes.string,
+    yAxisBorder: React.PropTypes.number
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -88,7 +89,8 @@ module.exports = React.createClass({
         gridHorizontal: props.gridHorizontal,
         gridHorizontalStroke: props.gridHorizontalStroke,
         gridHorizontalStrokeWidth: props.gridHorizontalStrokeWidth,
-        gridHorizontalStrokeDash: props.gridHorizontalStrokeDash
+        gridHorizontalStrokeDash: props.gridHorizontalStrokeDash,
+        yAxisBorder: props.yAxisBorder
       }),
       React.createElement(AxisLine, _extends({
         orient: props.yOrient,

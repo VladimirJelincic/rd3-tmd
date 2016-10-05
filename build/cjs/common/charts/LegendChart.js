@@ -36,7 +36,7 @@ module.exports = React.createClass({
       data: [],
       legend: false,
       legendPosition: 'right',
-      sideOffset: 90,
+      sideOffset: 80,
       svgClassName: 'rd3-chart',
       titleClassName: 'rd3-chart-title',
       title: ''
@@ -106,7 +106,7 @@ module.exports = React.createClass({
         ),
         React.createElement(
           'div',
-            { style: { display: 'table-cell', width: props.sideOffset, verticalAlign: 'top',width:'120px' } },
+            { style: { display: 'table-cell', width: props.sideOffset, verticalAlign: 'top',width:'70px' } },
           this._renderLegend()
         )
       )

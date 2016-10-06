@@ -85,6 +85,10 @@ module.exports = React.createClass({
       ticks = scale.domain();
     }
     if(props.yAxisBorder){
+      // remove neigbouring ticks
+      ticks = ticks.filter(function(value){
+        return !(value === Math.floor(props.yAxisBorder+1) || value === Math.floor(props.yAxisBorder))
+      });
       ticks.push(props.yAxisBorder);
     }
     if (props.tickFormatting) {

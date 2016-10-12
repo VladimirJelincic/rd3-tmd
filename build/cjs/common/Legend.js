@@ -74,7 +74,7 @@ module.exports = React.createClass({
       paddingLeft: '0',
       marginBottom: '0',
       marginTop: topMargin,
-      listStylePosition: 'inside'
+      listStylePosition: 'initial'
     };
 
     return React.createElement(

@@ -46,7 +46,7 @@ module.exports = React.createClass({
         lineHeight: '60%',
         fontSize: '180%',
         marginLeft: '10px',
-        width: '120%'
+        width: '150%'
       };
 
       legendItems.push(React.createElement(

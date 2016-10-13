@@ -45,7 +45,7 @@ module.exports = React.createClass({
         color: props.colors(props.colorAccessor(series, idx)),
         lineHeight: '60%',
         fontSize: '180%',
-        marginLeft: '10px',
+        marginLeft: '25px',
         width: '150%'
       };
 

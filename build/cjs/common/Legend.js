@@ -45,8 +45,8 @@ module.exports = React.createClass({
         color: props.colors(props.colorAccessor(series, idx)),
         lineHeight: '60%',
         fontSize: '180%',
-        marginLeft: '25px',
-        width: '150%'
+        marginLeft: '60px',
+        width: '120%'
       };
 
       legendItems.push(React.createElement(

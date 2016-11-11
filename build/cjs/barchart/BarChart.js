@@ -41,7 +41,8 @@ module.exports = React.createClass({
     yAccessor: React.PropTypes.any,
     handleHighLight: React.PropTypes.func,
     yDomain: React.PropTypes.array,
-    yAxisBorder: React.PropTypes.number
+    yAxisBorder: React.PropTypes.number,
+    handleMouseClick: React.PropTypes.func
   },
 
   mixins: [CartesianChartPropsMixin, DefaultAccessorsMixin, ViewBoxMixin, TooltipMixin],
@@ -214,7 +215,8 @@ module.exports = React.createClass({
             valuesAccessor: props.valuesAccessor,
             onMouseOver: this.onMouseOver,
             onMouseLeave: this.onMouseLeave,
-            handleHighLight:props.handleHighLight
+            handleHighLight:props.handleHighLight,
+            handleMouseClick: props.handleMouseClick,
           })
         )
       ),

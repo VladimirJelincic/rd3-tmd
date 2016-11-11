@@ -16,7 +16,8 @@ module.exports = React.createClass({
     y: React.PropTypes.number,
     className: React.PropTypes.string,
     handleMouseOver: React.PropTypes.func,
-    handleMouseLeave: React.PropTypes.func
+    handleMouseLeave: React.PropTypes.func,
+    handleMouseClick: React.PropTypes.func
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -25,13 +26,18 @@ module.exports = React.createClass({
       className: 'rd3-barchart-bar'
     };
   },
+  componentDidMount: function componentDidMount() {
+    var rect = this.refs['barNode'];
+    rect.addEventListener('click',this.props.handleMouseClick);
+  },
   render: function render() {
     return React.createElement('rect', _extends({
       className: 'rd3-barchart-bar'
     }, this.props, {
       fill: this.props.fill,
+      ref: 'barNode',
       onMouseOver: this.props.handleMouseOver,
-      onMouseLeave: this.props.handleMouseLeave
+      onMouseLeave: this.props.handleMouseLeave,
     }));
   }
 });

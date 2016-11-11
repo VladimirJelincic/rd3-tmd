@@ -21,7 +21,8 @@ module.exports = React.createClass({
     hoverAnimation: React.PropTypes.any, // TODO: prop types?
     xScale: React.PropTypes.any,
     yScale: React.PropTypes.any,
-    handleHighLight: React.PropTypes.func
+    handleHighLight: React.PropTypes.func,
+    handleMouseClick: React.PropTypes.func
   },
 
   _renderBarSeries: function _renderBarSeries() {
@@ -62,7 +63,8 @@ module.exports = React.createClass({
         yValue: segment.y,
         seriesName: this.props.series[seriesIdx]
       },
-      handleHighLight:this.props.handleHighLight
+      handleHighLight:this.props.handleHighLight,
+      handleMouseClick: this.props.handleMouseClick
     });
   },
   render: function render() {

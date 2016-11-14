@@ -94,7 +94,8 @@ module.exports = React.createClass({
         dataPoint: {
           xValue: point.x,
           yValue: point.y,
-          seriesName: vnode.point.series.name
+          seriesName: vnode.point.series.name,
+          key: vnode.point.series.key,
         },
         handleHighLight:props.handleHighLight
       });

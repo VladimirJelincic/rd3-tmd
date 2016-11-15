@@ -2,7 +2,6 @@
 
 var React = require('react');
 var BarContainer = require('./BarContainer');
-var shade = require('../utils').shade;
 module.exports = React.createClass({
 
   displayName: 'DataSeries',
@@ -54,14 +53,15 @@ module.exports = React.createClass({
       width: grouped ? xScale.rangeBand() / series.length : xScale.rangeBand(),
       x: grouped ? xScale(segment.x) + xScale.rangeBand() / series.length * seriesIdx : xScale(segment.x),
       y: segment.y >= 0 ? y : y - barHeight,
-      fill: segment.highlight ? shade(colors(colorAccessor(segment, seriesIdx)) || '#3182BD', 0.5): colors(colorAccessor(segment, seriesIdx)),
+      fill: colors(colorAccessor(segment, seriesIdx)),
       hoverAnimation: hoverAnimation,
       onMouseOver: this.props.onMouseOver,
       onMouseLeave: this.props.onMouseLeave,
       dataPoint: {
         xValue: segment.x,
         yValue: segment.y,
-        seriesName: this.props.series[seriesIdx]
+        seriesName: this.props.series[seriesIdx],
+        highlight: segment.highlight
       },
       handleHighLight:this.props.handleHighLight,
       handleMouseClick: this.props.handleMouseClick

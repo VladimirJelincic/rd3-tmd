@@ -68,7 +68,7 @@ module.exports = React.createClass({
         var props = this.props;
 
         return React.createElement(Bar, _extends({}, props, {
-            fill: this.state.fill,
+            fill: this.props.dataPoint.highlight ? shade(this.state.fill,0.5): this.state.fill,
             handleMouseOver: props.hoverAnimation ? this._animateBar : null,
             handleMouseLeave: props.hoverAnimation ? this._restoreBar : null,
             handleMouseClick: this._clickBar

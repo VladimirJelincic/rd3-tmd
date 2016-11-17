@@ -37,7 +37,7 @@ module.exports = React.createClass({
     var rect = findDOMNode(this).getElementsByTagName('circle')[0].getBoundingClientRect();
     this.props.onMouseOver.call(this, rect.right, rect.top, this.props.dataPoint);
     this.setState({
-      circleRadius: this.props.circleRadius * (5 / 4),
+      circleRadius: this.props.circleRadius * (3),
       circleFill: shade(this.props.circleFill, 0.2)
     });
     if(this.props.handleHighLight){
@@ -78,8 +78,8 @@ module.exports = React.createClass({
         voronoiPath: this._drawPath(props.vnode),
         cx: props.cx,
         cy: props.cy,
-        circleRadius: this.state.circleRadius,
-        circleFill: this.state.circleFill
+        circleRadius: this.props.dataPoint.highlight ? this.props.circleRadius * 4 : this.state.circleRadius,
+        circleFill: this.props.dataPoint.highlight ? shade(this.props.circleFill, 0.1): this.state.circleFill
       })
     );
   }

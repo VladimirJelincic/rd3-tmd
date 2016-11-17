@@ -28,7 +28,8 @@ module.exports = React.createClass({
     circleRadius: React.PropTypes.number,
     hoverAnimation: React.PropTypes.bool,
     margins: React.PropTypes.object,
-    data: React.PropTypes.array.isRequired
+    data: React.PropTypes.array.isRequired,
+    handleHighlight: React.PropTypes.func
   },
 
   mixins: [CartesianChartPropsMixin, DefaultAccessorsMixin, ViewBoxMixin, TooltipMixin],
@@ -163,7 +164,7 @@ module.exports = React.createClass({
             width: innerWidth,
             height: innerHeight,
             onMouseOver: this.onMouseOver,
-            handleHighLight:this.props.handleHighLight
+            handleHighlight:this.props.handleHighlight
           })
         )
       ),

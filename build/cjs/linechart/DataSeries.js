@@ -16,7 +16,8 @@ module.exports = React.createClass({
     interpolationType: React.PropTypes.string,
     xAccessor: React.PropTypes.func,
     yAccessor: React.PropTypes.func,
-    hoverAnimation: React.PropTypes.bool
+    hoverAnimation: React.PropTypes.bool,
+    handleHighlight: React.PropTypes.func
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -98,7 +99,7 @@ module.exports = React.createClass({
           key: vnode.point.series.key,
           highlight: vnode.point.d.highlight,
         },
-        handleHighLight:props.handleHighLight
+        handleHighlight:props.handleHighlight,
       });
     });
 

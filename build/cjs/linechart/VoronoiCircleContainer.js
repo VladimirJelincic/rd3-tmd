@@ -40,8 +40,8 @@ module.exports = React.createClass({
       circleRadius: this.props.circleRadius * (3),
       circleFill: shade(this.props.circleFill, 0.2)
     });
-    if(this.props.handleHighLight){
-      this.props.handleHighLight(this.props.dataPoint);
+    if(this.props.handleHighlight){
+      this.props.handleHighlight(this.props.dataPoint);
     }
   },
   _restoreCircle: function _restoreCircle() {

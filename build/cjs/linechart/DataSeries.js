@@ -98,6 +98,7 @@ module.exports = React.createClass({
           seriesName: vnode.point.series.name,
           key: vnode.point.series.key,
           highlight: vnode.point.d.highlight,
+          tag: vnode.point.series.tag
         },
         handleHighlight:props.handleHighlight,
       });

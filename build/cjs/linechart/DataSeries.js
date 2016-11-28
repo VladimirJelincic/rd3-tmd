@@ -17,7 +17,8 @@ module.exports = React.createClass({
     xAccessor: React.PropTypes.func,
     yAccessor: React.PropTypes.func,
     hoverAnimation: React.PropTypes.bool,
-    handleHighlight: React.PropTypes.func
+    handleHighlight: React.PropTypes.func,
+    leaveHighlight: React.PropTypes.func
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -101,6 +102,7 @@ module.exports = React.createClass({
           tag: vnode.point.series.tag
         },
         handleHighlight:props.handleHighlight,
+        leaveHighlight: props.leaveHighlight
       });
     });
 

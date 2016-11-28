@@ -29,7 +29,8 @@ module.exports = React.createClass({
     hoverAnimation: React.PropTypes.bool,
     margins: React.PropTypes.object,
     data: React.PropTypes.array.isRequired,
-    handleHighlight: React.PropTypes.func
+    handleHighlight: React.PropTypes.func,
+    leaveHighlight: React.PropTypes.func
   },
 
   mixins: [CartesianChartPropsMixin, DefaultAccessorsMixin, ViewBoxMixin, TooltipMixin],
@@ -164,7 +165,8 @@ module.exports = React.createClass({
             width: innerWidth,
             height: innerHeight,
             onMouseOver: this.onMouseOver,
-            handleHighlight:this.props.handleHighlight
+            handleHighlight:this.props.handleHighlight,
+            leaveHighlight:this.props.leaveHighlight,
           })
         )
       ),

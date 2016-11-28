@@ -49,6 +49,9 @@ module.exports = React.createClass({
       circleRadius: this.props.circleRadius,
       circleFill: this.props.circleFill
     });
+    if(this.props.leaveHighlight){
+          this.props.leaveHighlight();
+    }
   },
   _drawPath: function _drawPath(d) {
     if (d === undefined) {

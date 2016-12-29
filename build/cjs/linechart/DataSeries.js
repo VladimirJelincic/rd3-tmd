@@ -101,7 +101,7 @@ module.exports = React.createClass({
           highlight: vnode.point.d.highlight,
           tag: vnode.point.series.tag
         },
-        handleHighlight:props.handleHighlight,
+        handleHighlight: props.handleHighlight,
         leaveHighlight: props.leaveHighlight
       });
     });
